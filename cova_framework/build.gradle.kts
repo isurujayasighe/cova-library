@@ -1,3 +1,5 @@
+import org.jetbrains.kotlin.konan.target.customerDistribution
+
 plugins {
     id("com.android.library")
     id("org.jetbrains.kotlin.android")
@@ -57,4 +59,14 @@ dependencies {
     implementation("androidx.compose.ui:ui-graphics")
     implementation("androidx.compose.ui:ui-tooling-preview")
     implementation("androidx.compose.material3:material3")
+}
+
+publishing {
+    publications {
+        create<MavenPublication>("maven") {
+            groupId = "com.covalent.cova_framework"
+            artifactId = "library"
+            version = "1.0.7"
+        }
+    }
 }
